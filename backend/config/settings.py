@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "accounts",
     "deces",
     'rest_framework',
+    "analytics",
 ]
 
 MIDDLEWARE = [
