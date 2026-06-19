@@ -1,41 +1,32 @@
+version: "3.9"
+
 services:
 
   web:
     build: ./backend
     container_name: gestion_deces_web
     command: python manage.py runserver 0.0.0.0:8000
-
     volumes:
       - ./backend:/app
-
     ports:
       - "8000:8000"
-
     env_file:
       - .env
-
     depends_on:
       - db
 
-
   db:
-    image: postgres:16
-
+    image: postgres:15
     container_name: gestion_deces_db
-
     restart: always
-
     environment:
       POSTGRES_DB: gestion_deces
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
-
     ports:
       - "5432:5432"
-
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
 
 volumes:
   postgres_data:
