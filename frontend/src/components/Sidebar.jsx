@@ -1,14 +1,4 @@
-import {
-    Drawer,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    Toolbar,
-    Typography,
-    Box,
-} from "@mui/material";
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography, Box, } from "@mui/material";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
@@ -51,7 +41,7 @@ function Sidebar() {
         >
             <Toolbar>
                 <Typography variant="h6">
-                    Gestion Décès IA
+                    Gestion causes Décès
                 </Typography>
             </Toolbar>
 
