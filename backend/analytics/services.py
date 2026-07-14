@@ -20,11 +20,9 @@ class DashboardService:
                 sexe="F"
             ).count(),
 
-            "causes_enregistrees":
-                Deces.objects.values("cause").distinct().count(),
+            "total_causes": Deces.objects.values("cause").distinct().count(),
 
-            "regions_concernees":
-                Deces.objects.values("lieu").distinct().count(),
+            "total_lieux": Deces.objects.values("lieu").distinct().count(),
         }
 
 

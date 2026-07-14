@@ -28,10 +28,25 @@ class PersonneSerializer(serializers.ModelSerializer):
 
 
 class DecesSerializer(serializers.ModelSerializer):
-    personne = PersonneSerializer(read_only=True)
-    cause = CauseDecesSerializer(read_only=True)
-    lieu = LieuSerializer(read_only=True)
-    enregistre_par = UserSerializer(read_only=True)
+
+    personne_details = PersonneSerializer(
+        source="personne",
+        read_only=True
+    )
+
+    cause_details = CauseDecesSerializer(
+        source="cause",
+        read_only=True
+    )
+
+    lieu_details = LieuSerializer(
+        source="lieu",
+        read_only=True
+    )
+
+    class Meta:
+        model = Deces
+        fields = "__all__"
 
     class Meta:
         model = Deces

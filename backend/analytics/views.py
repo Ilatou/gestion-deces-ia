@@ -1,37 +1,33 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 
 from .services import DashboardService
 
 
 class DashboardStatsView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
-        data = DashboardService.statistiques_generales()
-        return Response(data)
+        return Response(DashboardService.statistiques_generales())
 
 
 class TopCausesView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
-        data = DashboardService.top_causes()
-        return Response(data)
+        return Response(DashboardService.top_causes())
 
 
 class RegionsView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
-        data = DashboardService.repartition_par_region()
-        return Response(data)
+        return Response(DashboardService.repartition_par_region())
 
 
 class SexeView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
-        data = DashboardService.repartition_par_sexe()
-        return Response(data)
+        return Response(DashboardService.repartition_par_sexe())
